@@ -33,17 +33,15 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-    // --- Fonctionnalités spécifiques ---
-
     public List<Product> getProductsByCategory(String category) {
-        return productRepository.findByCategorie(category);
+        return productRepository.findByCategory(category);
     }
 
-    public List<Product> getProductsByPriceLessThan(Double price) {
-        return productRepository.findByPrixLessThan(price);
+    public List<Product> getProductsByPriceLessThanEqual(Double price) {
+        return productRepository.findByPriceLessThanEqual(price);
     }
 
     public List<Product> getLowStockProducts(int threshold) {
-        return productRepository.findProduitsStockFaible(threshold);
+        return productRepository.findProductsStockFaible(threshold);
     }
 }

@@ -11,12 +11,12 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    List<Product> findByCategorie(String categorie);
+    List<Product> findByCategory(String category);
 
-    List<Product> findByPrixLessThan(Double prix);
+    List<Product> findByPriceLessThanEqual(Double price);
 
     @Query("SELECT p FROM Product p WHERE p.stockAmount < :seuil")
-    List<Product> findProduitsStockFaible(@Param("seuil") int seuil);
+    List<Product> findProductsStockFaible(@Param("seuil") int seuil);
 
     @Query("SELECT ol.product FROM OrderLine ol GROUP BY ol.product ORDER BY SUM(ol.quantite) DESC LIMIT 1")
     Product findTopProduct();

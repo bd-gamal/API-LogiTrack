@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 @Entity
-@Table(name = "clients")
+@Table(name = "client")
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String name;
     private String email;

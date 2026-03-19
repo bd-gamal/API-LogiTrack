@@ -16,11 +16,13 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
+    @Column(name = "order_date")
     @CreationTimestamp
-    private LocalDateTime dateCommande;
+    private LocalDateTime orderDate;
 
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private OrderStatus statut = OrderStatus.PENDING;
 

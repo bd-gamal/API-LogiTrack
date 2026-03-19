@@ -45,7 +45,7 @@ public class ProductController {
 
     @GetMapping("/price/{price}")
     public ResponseEntity<List<Product>> getProductsByPrice(@PathVariable Double price) {
-        return ResponseEntity.ok(productService.getProductsByPriceLessThan(price));
+        return ResponseEntity.ok(productService.getProductsByPriceLessThanEqual(price));
     }
 
     @GetMapping("/low-stock")
